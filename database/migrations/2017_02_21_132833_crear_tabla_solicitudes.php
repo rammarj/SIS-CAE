@@ -21,8 +21,7 @@ class CrearTablaSolicitudes extends Migration
             $table->string('archivo');
             $table->timestamps();
             //referencias
-            $table->foreign('carrera_id')->references('id')->on('carreras');
-            $table->foreign('usuario_id')->references('id')->on('usuarios');
+            $table->foreign('alumno_id')->references('id')->on('alumnos');
         });
     }
 
