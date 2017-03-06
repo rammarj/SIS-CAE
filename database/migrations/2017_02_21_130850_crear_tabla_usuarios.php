@@ -27,6 +27,9 @@ class CrearTablaUsuarios extends Migration
             //relaciones
             $table->foreign('rol_id')->references('id')->on('roles');
         });
+
+        DB::insert('insert into usuarios (rol_id, nombre, apellido_paterno, apellido_materno, email, password) values (?, ?, ?, ?, ?, ?)', ['1','Admin', 'Admin', 'Admin', 'cae@upp.edu.mx', bcrypt('admin')]);
+
     }
 
     /**
