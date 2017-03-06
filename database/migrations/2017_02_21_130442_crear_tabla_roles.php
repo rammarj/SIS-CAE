@@ -18,6 +18,12 @@ class CrearTablaRoles extends Migration
             $table->increments('id');
             $table->string('rol',50)->unique();
         });
+
+        DB::insert('insert into roles (rol) values ( ?)', ['Administrador']);
+        DB::insert('insert into roles (rol) values ( ?)', ['Alumno']);
+        DB::insert('insert into roles (rol) values ( ?)', ['Coordinador']);
+        DB::insert('insert into roles (rol) values ( ?)', ['Tutor']);
+        DB::insert('insert into roles (rol) values ( ?)', ['']);
     }
 
     /**
