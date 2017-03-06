@@ -1,2 +1,0 @@
-Joaquín le borraste el archivo .env? Lo necesita para poder subir las migraciones.
-Creo que no lo deja subir, una disculpa.
