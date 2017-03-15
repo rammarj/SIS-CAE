@@ -7,10 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 class Alumno extends Model
 {
     //tabla de base dedatos    
-    protected $table = 'alumnos';
+    protected $table = 'alumnos';    
     
     //relacion con la tabla usuarios
-    public function getUsuario()
+    public function usuario()
     {
         return $this->belongsTo('App\User', 'usuario_id');
     }

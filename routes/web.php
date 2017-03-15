@@ -21,10 +21,19 @@ Route::group(['prefix' => 'usuario'], function () {
     
     //admin
     Route::resource('usuarios','Usuarios\Admin\UsuariosController', ['names' => [
-        'index' => 'usuarios.index',
-        'show'  => 'usuarios.mostrar',
-        'create'  => 'usuarios.crear',
-        'edit'  => 'usuarios.editar',
-        'destroy'  => 'usuarios.eliminar'
+        'index' => 'usuarios_index',
+        'show'  => 'usuarios_mostrar',
+        'store' => 'usuarios_guardar',
+        'create'  => 'usuarios_crear',
+        'edit'  => 'usuarios_editar',
+        'destroy'  => 'usuarios_eliminar'
+    ]]);
+
+    Route::resource('solicitudes','Usuarios\Admin\SolicitudesController', ['names' => [
+        'index' => 'admin_solicitudes_index',
+        'show'  => 'admin_solicitudes_mostrar',
+        'create'  => 'admin_solicitudes_crear',
+        'edit'  => 'admin_solicitudes_editar',
+        'destroy'  => 'admin_solicitudes_eliminar'
     ]]);
 });
