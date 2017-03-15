@@ -17,7 +17,7 @@ class CrearTablaTutores extends Migration
         Schema::create('tutores', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('usuario_id')->unsigned()->unique();
-
+            $table->timestamps();
             //referencias
             $table->foreign('usuario_id')->references('id')->on('usuarios');
         });

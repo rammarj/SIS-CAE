@@ -18,7 +18,7 @@ class CrearTablaCoordinadores extends Migration
             $table->increments('id');
             $table->integer('carrera_id')->unsigned()->unique();
             $table->integer('usuario_id')->unsigned()->unique();
-
+            $table->timestamps();   
             //referencias
             $table->foreign('carrera_id')->references('id')->on('carreras');
             $table->foreign('usuario_id')->references('id')->on('usuarios');

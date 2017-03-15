@@ -20,6 +20,7 @@ class CrearTablaAlumnos extends Migration
             $table->integer('usuario_id')->unsigned()->unique();
             $table->integer('tutor_id')->unsigned();
             $table->string('matricula',20)->unique();
+            $table->timestamps();
             //referencias
             $table->foreign('carrera_id')->references('id')->on('carreras');
             $table->foreign('usuario_id')->references('id')->on('usuarios');
