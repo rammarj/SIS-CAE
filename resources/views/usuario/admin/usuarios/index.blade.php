@@ -13,7 +13,7 @@
         <th>Nombre</th>
         <th>Correo</th>
         <th>Rol</th>
-        <th colspan="3">Acciones</th>
+        <th colspan="2">Acciones</th>
         </thead>
         <tbody>
             @foreach($usuarios as $usuario)
@@ -22,8 +22,7 @@
                 <td>{{$usuario->nombre.' '.$usuario->apellido_paterno.' '.$usuario->apellido_materno}}</td>
                 <td>{{$usuario->email}}</td>
                 <td><a class="btn btn-link " href="">{{$usuario->rol->rol}}</a></td>
-                <td><a class="btn btn-link text-success" href="">editar</a></td>
-                <td><a class="btn btn-link text-muted" href="">ver</a></td>
+                <td><a class="btn btn-link text-muted" href="{{ route('usuarios_mostrar', ['id'=>$usuario->id])  }}">ver</a></td>
                 <td><a class="btn btn-link text-danger" href="">eliminar</a></td>
             </tr>
             @endforeach
@@ -31,6 +30,8 @@
     </table>
 </div>
 <div class="panel-footer">
-    {{$usuarios->links()}}
+    {{$usuarios->links()}}    
 </div>
+<a class="btn btn-warning" href="{{ route('usuarios_crear') }}">Crear nuevo</a>
+
 @endsection

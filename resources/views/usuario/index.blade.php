@@ -13,14 +13,14 @@
                     </div>
                     <div class="panel-body">
                         <ul class="nav nav-pills nav-stacked">
-                            <li class="nav-item active">
-                                <a class="nav-link" href="#">Usuarios</a>
+                            <li class="nav-item @if(Route::currentRouteName()=='usuarios_index') active @endif">
+                                <a class="nav-link" href="{{ route('usuarios_index') }}">Usuarios</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="#">Minutas</a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Solicitudes</a>
+                            <li class="nav-item @if(Route::currentRouteName()=='admin_solicitudes_index') active @endif">
+                                <a class="nav-link" href="{{ route('admin_solicitudes_index') }}">Solicitudes</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="#">Configuracion de sitio</a>
