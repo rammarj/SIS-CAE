@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Carrera;
+use App\Rol;
 
 class UsuarioController extends Controller
 {
@@ -18,7 +20,9 @@ class UsuarioController extends Controller
  
     public function perfil() {
         $user = Auth::user();
-        return response($user->toJson());
+        $carreras = Carrera::all();
+        $roles = Rol::all();
+        return view('usuario.perfil', ['usuario'=>$user, 'carreras'=>$carreras, 'roles'=>$roles]);
     }
     
 }

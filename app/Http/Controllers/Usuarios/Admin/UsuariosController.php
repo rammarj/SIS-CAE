@@ -30,7 +30,8 @@ class UsuariosController extends \App\Http\Controllers\UsuarioController
     //formulario de creacion del usuario
     public function create() {
         $roles = Rol::all();
-        return view('usuario.admin.usuarios.create', ['roles'=>$roles]);
+        $carreras = Carrera::all();
+        return view('usuario.admin.usuarios.create', ['roles'=>$roles, 'carreras'=>$carreras]);
     }
     //peticion de creacion de usuario
     public function store(Request $request) {
@@ -48,8 +49,9 @@ class UsuariosController extends \App\Http\Controllers\UsuarioController
         }
     }
 
-    private function crearActualizar( $request, $crear = true, $id = NULL){ //true para crear. False para actualizar
-        $this->validate($request, [
+    protected function validator(Request $data)
+    {
+        return Validator::make($data, [
             'nombre' => 'required|max:50|min:4|alpha',
             'apellido_paterno' => 'required|max:50|min:4|alpha',
             'apellido_materno' => 'required|max:50|min:4|alpha',
@@ -57,11 +59,16 @@ class UsuariosController extends \App\Http\Controllers\UsuarioController
             'password' => 'required|min:6|confirmed',
             'rol' => 'required|exists:roles,id',
             // en caso de ser alumno o coordinador
-            'matricula' => 'requiredif:rol,2', //requerido cuando es un alumno
-            'carrera' => 'requiredif:rol,2,3' //requerido cuando el rol es 2 (Alumno), 3 (Coordinador)
+            'matricula' => 'requiredif:rol,2|min:6|max:20|unique:alumnos', //requerido cuando es un alumno
+            'tutor' => 'requiredif:rol,2|exists:tutor,id',
+            'carrera' => 'requiredif:rol,2,3|exists:carreras,id' //requerido cuando el rol es 2 (Alumno), 3 (Coordinador)
 
         ]);
-       
+    }
+
+    private function crearActualizar( $request, $crear = true, $id = NULL){ //true para crear. False para actualizar
+        /*$this->validate($request, [            
+        ]);*/       
 
         $user = NULL;
         if ($crear) {

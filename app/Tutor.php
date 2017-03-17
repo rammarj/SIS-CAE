@@ -9,6 +9,9 @@ class Tutor extends Model
     //tabla de base dedatos    
     protected $table = 'tutores';
     
+    protected $hidden = [
+        'created_at', 'updated_at'
+    ];
     //relacion con la tabla usuarios
     public function usuario()
     {
