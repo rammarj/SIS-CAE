@@ -16,7 +16,7 @@ class CrearTablaCarreras extends Migration
         //
         Schema::create('carreras', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('carrera')->unique();
+            $table->string('carrera', 70)->unique();
         });
     }
 

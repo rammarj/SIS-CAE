@@ -23,7 +23,6 @@ class CrearTablaRoles extends Migration
         DB::insert('insert into roles (rol) values ( ?)', ['Alumno']);
         DB::insert('insert into roles (rol) values ( ?)', ['Coordinador']);
         DB::insert('insert into roles (rol) values ( ?)', ['Tutor']);
-        DB::insert('insert into roles (rol) values ( ?)', ['']);
     }
 
     /**
