@@ -22,11 +22,11 @@
                             <li class="nav-item @if(Route::currentRouteName()=='admin_solicitudes_index') active @endif">
                                 <a class="nav-link" href="{{ route('admin_solicitudes_index') }}">Solicitudes</a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Configuracion de sitio</a>
+                            <li class="nav-item @if(Route::currentRouteName()=='admin_configuracion') active @endif">
+                                <a class="nav-link" href="{{ route('admin_configuracion') }}">Configuracion de sitio</a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Mi perfil</a>
+                            <li class="nav-item @if(Route::currentRouteName()=='perfil_usuario') active @endif">
+                                <a class="nav-link" href="{{ route('perfil_usuario') }}">Mi perfil</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="#">Cerrar mi sesión</a>
@@ -43,5 +43,5 @@
         </div>
     </div>
 </div>
-
+<script type="text/javascript" src="{{ url('js/admin/usuarios.js') }}"></script>
 @endsection
