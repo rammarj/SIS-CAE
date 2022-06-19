@@ -4,12 +4,12 @@ namespace App\Http\Controllers\Usuarios\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\User;
-use App\Rol;
-use App\Tutor;
-use App\Coordinador;
-use App\Carrera;
-use App\Alumno;
+use App\Models\User;
+use App\Models\Rol;
+use App\Models\Tutor;
+use App\Models\Coordinador;
+use App\Models\Carrera;
+use App\Models\Alumno;
 
 class UsuariosController extends \App\Http\Controllers\UsuarioController
 {

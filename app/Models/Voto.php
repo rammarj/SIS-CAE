@@ -1,12 +1,13 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Rol extends Model
+class Voto extends Model
 {
     //tabla de base dedatos    
-    protected $table = 'roles';
+    protected $table = 'votos';
+    
     
 }

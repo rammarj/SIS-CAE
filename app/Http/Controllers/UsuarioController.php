@@ -4,8 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use App\Carrera;
-use App\Rol;
+use App\Models\Carrera;
+use App\Models\Rol;
 
 class UsuarioController extends Controller
 {

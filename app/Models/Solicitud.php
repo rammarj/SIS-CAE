@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -11,10 +11,10 @@ class Solicitud extends Model
         
     //relacion con la tabla votos
     public function votos() {
-        return $this->hasMany('App\Voto', 'solicitud_id');
+        return $this->hasMany('App\Models\Voto', 'solicitud_id');
     }
     
     public function alumno() {
-        return $this->belongsTo('App\Alumno', 'alumno_id');
+        return $this->belongsTo('App\Models\Alumno', 'alumno_id');
     }
 }

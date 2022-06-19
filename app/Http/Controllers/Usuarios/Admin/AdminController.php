@@ -9,7 +9,7 @@ class AdminController extends Controller
 {
     //
     public function configuracion(){
-    	$carreras = \App\Carrera::all();
+    	$carreras = \App\Models\Carrera::all();
     	return view('usuario.admin.configuracion', ['carreras'=>$carreras]);
     }
 }

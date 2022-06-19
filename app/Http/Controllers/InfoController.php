@@ -9,7 +9,7 @@ class InfoController extends Controller {
      * Devuelve todos los usuarios tutores en formato JSON
      */
     public function getTutores() {
-        $tutores = \App\Tutor::all();
+        $tutores = \App\Models\Tutor::all();
         $usuarios = [];
         foreach ($tutores as $tutor) {
             $usuarios[] = $tutor->usuario;

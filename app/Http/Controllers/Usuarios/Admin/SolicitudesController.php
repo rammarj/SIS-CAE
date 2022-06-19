@@ -13,12 +13,12 @@ class SolicitudesController extends \App\Http\Controllers\UsuarioController
     }
     //
     public function index() {
-        $solicitudes = \App\Solicitud::paginate(10);
+        $solicitudes = \App\Models\Solicitud::paginate(10);
         return view('usuario.admin.solicitudes.index',['solicitudes'=>$solicitudes]);
     }
     
     public function show($id) {
-        $solicitud = \App\Solicitud::find($id);
+        $solicitud = \App\Models\Solicitud::find($id);
         return view('usuario.admin.solicitudes.show',['solicitud'=>$solicitud]);
     }
     //formulario de creacion del usuario

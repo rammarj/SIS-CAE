@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Route;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,17 +17,17 @@ Route::get('/', 'HomeController@index')->name('home');
 Auth::routes();
 
 Route::group(['prefix' => 'usuario'], function () {
-    Route::get('/', 'UsuarioController@index')->name('home_usuario');
-    Route::get('perfil', 'UsuarioController@perfil')->name('perfil_usuario');
+    Route::get('/', 'App\Http\Controllers\UsuarioController@index')->name('home_usuario');
+    Route::get('perfil', 'App\Http\Controllers\UsuarioController@perfil')->name('perfil_usuario');
     
     //obtención de info
-    Route::get('get-tutores', 'InfoController@getTutores');
-    Route::get('get-carreras', 'InfoController@getCarreras');
+    Route::get('get-tutores', 'App\Http\Controllers\InfoController@getTutores');
+    Route::get('get-carreras', 'App\Http\Controllers\InfoController@getCarreras');
 
     //configuracion
     Route::group(['prefix' => 'configuracion'], function () {
-        Route::get('/', 'Usuarios\Admin\AdminController@configuracion')->name('admin_configuracion');
-        Route::resource('carreras','Usuarios\Admin\CarrerasController', ['names' => [
+        Route::get('/', 'App\Http\Controllers\Usuarios\Admin\AdminController@configuracion')->name('admin_configuracion');
+        Route::resource('carreras','App\Http\Controllers\Usuarios\Admin\CarrerasController', ['names' => [
             'index' => 'carreras_index',
             'show'  => 'carreras_mostrar',
             'store' => 'carreras_guardar',
@@ -37,7 +38,7 @@ Route::group(['prefix' => 'usuario'], function () {
         ]]);
     });
     //admin
-    Route::resource('usuarios','Usuarios\Admin\UsuariosController', ['names' => [
+    Route::resource('usuarios','App\Http\Controllers\Usuarios\Admin\UsuariosController', ['names' => [
         'index' => 'usuarios_index',
         'show'  => 'usuarios_mostrar',
         'store' => 'usuarios_guardar',
@@ -47,7 +48,7 @@ Route::group(['prefix' => 'usuario'], function () {
         'destroy'  => 'usuarios_eliminar'
     ]]);
 
-    Route::resource('solicitudes','Usuarios\Admin\SolicitudesController', ['names' => [
+    Route::resource('solicitudes','App\Http\Controllers\Usuarios\Admin\SolicitudesController', ['names' => [
         'index' => 'admin_solicitudes_index',
         'show'  => 'admin_solicitudes_mostrar',
         'create'  => 'admin_solicitudes_crear',

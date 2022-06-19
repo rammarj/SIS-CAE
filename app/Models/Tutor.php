@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -20,6 +20,6 @@ class Tutor extends Model
     
     //relacion con la tabla alumnos
     public function alumnos() {
-        return $this->hasMany('App\Alumno', 'usuario_id');
+        return $this->hasMany('App\Models\Alumno', 'usuario_id');
     }
 }

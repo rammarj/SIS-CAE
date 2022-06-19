@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -12,11 +12,11 @@ class Coordinador extends Model
     //relacion con la tabla usuarios
     public function usuario()
     {
-        return $this->belongsTo('App\User', 'usuario_id');
+        return $this->belongsTo('App\Models\User', 'usuario_id');
     }    
     
     //relacion con la tabla carreras
     public function carrera() {
-        return $this->belongsTo('App\Carrera', 'carrera_id');
+        return $this->belongsTo('App\Models\Carrera', 'carrera_id');
     }
 }

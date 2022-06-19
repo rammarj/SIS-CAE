@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Usuarios\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Carrera;
+use App\Models\Carrera;
 
 class CarrerasController extends Controller {
 

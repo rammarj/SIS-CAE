@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -31,7 +31,7 @@ class User extends Authenticatable
     
     //relacion con la tabla roles
     public function rol() {
-        return $this->belongsTo('App\Rol', 'rol_id');
+        return $this->belongsTo('App\Models\Rol', 'rol_id');
     }   
     
 }
